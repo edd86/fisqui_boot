@@ -1,8 +1,10 @@
 import 'package:fisqui_bot/models/collections.dart';
 import 'package:fisqui_bot/models/option_model.dart';
+import 'package:fisqui_bot/pages/physic_pages/commands_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class OptionsWidget extends StatefulWidget {
   const OptionsWidget({Key? key}) : super(key: key);
@@ -56,7 +58,6 @@ class _OptionsWidgetState extends State<OptionsWidget> {
                     setState(() {
                       buttonOption = Collection().options[index];
                     });
-                    //TODO: Lógica de los botónes de opciones
                   },
                 ),
               );
@@ -79,7 +80,7 @@ class _OptionsWidgetState extends State<OptionsWidget> {
                     topRight: Radius.circular(20)),
                 child: Image.asset(
                   buttonOption.image,
-                  height: size.height * .385 *.85,
+                  height: size.height * .385 * .85,
                   fit: BoxFit.fill,
                 ),
               ),
@@ -99,7 +100,9 @@ class _OptionsWidgetState extends State<OptionsWidget> {
                       const Icon(LineIcons.infinity),
                       TextButton(
                         onPressed: () {
-                          //TODO: Bóton de Código
+                          if (buttonOption.codigo != '') {
+                            openPDFAcrobat(buttonOption.codigo);
+                          }
                         },
                         child: Text(
                           '- Código',
@@ -115,7 +118,9 @@ class _OptionsWidgetState extends State<OptionsWidget> {
                       ),
                       TextButton(
                         onPressed: () {
-                          //TODO: Bóton de materiales
+                          if (buttonOption.material != '') {
+                            openPDFAcrobat(buttonOption.material);
+                          }
                         },
                         child: Text(
                           '- Materiales',
@@ -146,7 +151,13 @@ class _OptionsWidgetState extends State<OptionsWidget> {
                       ),
                     ),
                     onPressed: () {
-                      //TODO: Lógica Botón de Inicio de Actividad
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CommandsPage(),
+                        ),
+                      );
+                      //TODO: Lógica Botón de Inicio de Actividad de movimientos
                     },
                   ),
                 ),
@@ -156,5 +167,14 @@ class _OptionsWidgetState extends State<OptionsWidget> {
         )
       ],
     );
+  }
+}
+
+void openPDFAcrobat(String urlPDF) async {
+  Uri url = Uri.parse(urlPDF);
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }

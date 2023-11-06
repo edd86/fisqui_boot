@@ -148,32 +148,13 @@ class _PhysicPageState extends State<PhysicPage> {
                       children: [
                         SizedBox(
                           width: size.width * .35,
-                          child: ElevatedButton(
-                            style: ButtonStyle(
-                              backgroundColor:
-                                  const MaterialStatePropertyAll(Colors.white),
-                              maximumSize: MaterialStatePropertyAll(size),
-                              shape: MaterialStateProperty.all<
-                                  RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                              ),
+                          child: Text(
+                            userName!,
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.lato(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
                             ),
-                            child: Text(
-                              'Página Principal',
-                              style: GoogleFonts.lato(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            onPressed: () {
-                              Navigator.popUntil(
-                                context,
-                                ModalRoute.withName('/'),
-                              );
-                              //TODO: Agregar la lógica para el primer botón
-                            },
                           ),
                         ),
                         SizedBox(
@@ -191,7 +172,7 @@ class _PhysicPageState extends State<PhysicPage> {
                               ),
                             ),
                             child: Text(
-                              'Cerrar Sesión $userName',
+                              'Cerrar Sesión',
                               textAlign: TextAlign.center,
                               style: GoogleFonts.lato(
                                 color: Colors.black,
@@ -199,7 +180,10 @@ class _PhysicPageState extends State<PhysicPage> {
                               ),
                             ),
                             onPressed: () {
-                              //TODO: Agregar la lógica para el segundo botón
+                              Navigator.popUntil(
+                                context,
+                                ModalRoute.withName('/'),
+                              );
                             },
                           ),
                         )
