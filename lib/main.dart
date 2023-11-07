@@ -13,7 +13,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primaryColor: Colors.white),
-      title: 'FisQuiBot',
+      title: 'FisQuiBoot',
       routes: AppRoutes.routes(context),
       initialRoute: AppRoutes.splashPage,
       //home: SplashPage(),

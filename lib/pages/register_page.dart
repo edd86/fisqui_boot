@@ -37,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       Text(
                         'BIENVENIDO A',
                         style: GoogleFonts.lato(
-                            color: Colors.white, fontSize: size.height * .04),
+                            color: Colors.white, fontSize: size.height * .03),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -46,14 +46,14 @@ class _RegisterPageState extends State<RegisterPage> {
                             'FISQUI',
                             style: GoogleFonts.lato(
                               color: Colors.white,
-                              fontSize: size.height * .058,
+                              fontSize: size.height * .05,
                             ),
                           ),
                           Text(
                             'BOOT',
                             style: GoogleFonts.lato(
                               color: const Color(0xFFe5c132),
-                              fontSize: size.height * .058,
+                              fontSize: size.height * .050,
                             ),
                           )
                         ],
