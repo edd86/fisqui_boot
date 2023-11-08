@@ -15,7 +15,6 @@ class AppRoutes {
       homePage : (context) => const HomePage(),
       physicPage : (context) => const PhysicPage(),
       chemistryPage : (context) => const ChemistryPage(),
-      commandPage : (context) => CommandsPage()
     };
   }
 }

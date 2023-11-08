@@ -1,4 +1,5 @@
 import 'package:fisqui_bot/helpers/bluetooth_helper.dart';
+import 'package:fisqui_bot/variables/global_variables.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -105,8 +106,10 @@ class _ListDevicesState extends State<ListDevices> {
                       onTap: () {
                         if (device.isConnected) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text('Dispositivo conectado')),
+                            const SnackBar(content: Text('Dispositivo conectado')),
                           );
+                          btMac = device.address;
+                          Navigator.pop(context);
                         } else {
                           _helper.connectDevice(device);
                           setState(() {

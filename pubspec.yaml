@@ -16,6 +16,7 @@ dependencies:
   ionicons: ^0.2.2
   line_icons: ^2.0.3
   page_transition: ^2.1.0
+  syncfusion_flutter_pdfviewer: ^23.1.44
   url_launcher: ^6.2.1
 
 dev_dependencies:
@@ -27,4 +28,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/docs/codigomru.pdf
+    - assets/docs/codigomruv.pdf
+    - assets/docs/materialesmru.pdf
+    - assets/docs/materialesmruv.pdf
     - assets/prueba.pdf

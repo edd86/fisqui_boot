@@ -1,4 +1,4 @@
-import 'package:fisqui_bot/pages/physic_pages/widgets/conections_widget.dart';
+
 import 'package:fisqui_bot/pages/physic_pages/widgets/data_widget.dart';
 import 'package:fisqui_bot/pages/physic_pages/widgets/options_widget.dart';
 import 'package:fisqui_bot/variables/global_variables.dart';
@@ -124,10 +124,6 @@ class _PhysicPageState extends State<PhysicPage> {
                     height: size.height * .01,
                   ),
                   const OptionsWidget(),
-                  SizedBox(
-                    height: size.height * .01,
-                  ),
-                  const ConectionsWidget()
                 ],
               ),
             ),

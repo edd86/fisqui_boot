@@ -4,17 +4,17 @@ class Collection {
   List<Option> options = [
     Option(
       name: 'MRU',
-      image: 'assets/images/mru.jpg',
+      image: 'assets/images/mruv.jpeg',
       detalle: 'COCHE SIGUE LINEA',
-      codigo: 'https://drive.google.com/file/d/1SabO53crrGzFcBkqo414xODhjPEfRp1S/view?usp=drive_link',
-      material: 'https://drive.google.com/file/d/1e2kG9ja-ftDNbDwdfDn8CfyZ8yO_HSmh/view?usp=drive_link'
+      codigo: 'assets/docs/codigomru.pdf',
+      material: 'assets/docs/materialesmru.pdf'
     ),
     Option(
       name: 'MRUV',
-      image: 'assets/images/mruv.jpeg',
+      image:  'assets/images/mru.jpg',
       detalle: 'COCHE CONTROLADO POR BLUETHOOT',
-      codigo: 'https://drive.google.com/file/d/1_NBRBqch7gdyu9PsQL1D979pB0-AeEx0/view?usp=drive_link',
-      material: 'https://drive.google.com/file/d/1a06YtOhAK5JuxBCzIGJkhDSUzqwclRLa/view?usp=drive_link'
+      codigo: 'assets/docs/codigomruv.pdf',
+      material: 'assets/docs/materialesmruv.pdf'
     ),
     Option(
       name: 'CAÍDA LIBRE',

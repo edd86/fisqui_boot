@@ -1,10 +1,11 @@
 import 'package:fisqui_bot/models/collections.dart';
 import 'package:fisqui_bot/models/option_model.dart';
-import 'package:fisqui_bot/pages/physic_pages/commands_page.dart';
+import 'package:fisqui_bot/pages/physic_pages/commands_mru_page.dart';
+import 'package:fisqui_bot/pages/physic_pages/commands_mruv_page.dart';
+import 'package:fisqui_bot/pages/physic_pages/widgets/pdf_visor.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class OptionsWidget extends StatefulWidget {
   const OptionsWidget({Key? key}) : super(key: key);
@@ -15,6 +16,7 @@ class OptionsWidget extends StatefulWidget {
 
 class _OptionsWidgetState extends State<OptionsWidget> {
   Option buttonOption = Collection().options[0];
+  String optionName = Collection().options[0].name;
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +57,7 @@ class _OptionsWidgetState extends State<OptionsWidget> {
                     style: GoogleFonts.lato(fontSize: size.height * .013),
                   ),
                   onPressed: () {
+                    optionName = Collection().options[index].name;
                     setState(() {
                       buttonOption = Collection().options[index];
                     });
@@ -151,30 +154,146 @@ class _OptionsWidgetState extends State<OptionsWidget> {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => CommandsPage(),
-                        ),
-                      );
-                      //TODO: Lógica Botón de Inicio de Actividad de movimientos
+                      switch (optionName) {
+                        case 'MRU':
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CommandsMruPage(),
+                            ),
+                          );
+                          break;
+                        case 'MRUV':
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CommandsMruvPage(),
+                            ),
+                          );
+                        default:
+                      }
                     },
                   ),
                 ),
               )
             ],
           ),
+        ),
+        SizedBox(
+          height: size.height * .01,
+        ),
+        Container(
+          width: double.infinity,
+          height: size.height * .035,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(0, 255, 255, 255),
+                Color.fromARGB(75, 255, 255, 255),
+                Color.fromARGB(75, 255, 255, 255),
+                Color.fromARGB(100, 255, 255, 255),
+                Color.fromARGB(100, 255, 255, 255),
+                Color.fromARGB(100, 255, 255, 255),
+                Color.fromARGB(75, 255, 255, 255),
+                Color.fromARGB(0, 255, 255, 255),
+              ],
+            ),
+            //color: Color.fromARGB(100, 255, 255, 255),
+          ),
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              vertical: size.height * .009,
+            ),
+            child: Row(
+              children: [
+                Text(
+                  'CONEXIONES FISQUI',
+                  style: GoogleFonts.lato(
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  'BOOT',
+                  style: GoogleFonts.lato(
+                    color: const Color(0xFFe5c132),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        SizedBox(
+          height: size.height * .01,
+        ),
+        SizedBox(
+          //color: Colors.amber,
+          height: size.height * .17,
+          width: double.infinity,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            itemCount: Collection().options.length,
+            separatorBuilder: (context, index) => SizedBox(
+              width: size.width * .02,
+            ),
+            itemBuilder: (context, index) {
+              Option conectionOption = Collection().options[index];
+              return GestureDetector(
+                child: Container(
+                  height: size.height * .15,
+                  width: size.width * .4,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.white,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      ClipRRect(
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          topRight: Radius.circular(15),
+                        ),
+                        child: Image.asset(
+                          conectionOption.image,
+                          height: size.height * .15 * .89,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: size.width * .010),
+                        child: Text(
+                          conectionOption.detalle,
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.lato(
+                            fontSize: size.height * .014,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                onTap: () {
+                  optionName = conectionOption.name;
+                  setState(() {
+                    buttonOption = conectionOption;
+                  });
+                },
+              );
+            },
+          ),
         )
       ],
     );
   }
-}
 
-void openPDFAcrobat(String urlPDF) async {
-  Uri url = Uri.parse(urlPDF);
-  if (await canLaunchUrl(url)) {
-    await launchUrl(url);
-  } else {
-    throw 'Could not launch $url';
+  void openPDFAcrobat(String pdfURL) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => PdfVisor(pdfURL),
+      ),
+    );
   }
 }

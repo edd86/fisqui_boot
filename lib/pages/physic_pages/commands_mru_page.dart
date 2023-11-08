@@ -3,8 +3,8 @@ import 'package:fisqui_bot/variables/global_variables.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CommandsPage extends StatelessWidget {
-  CommandsPage({Key? key}) : super(key: key);
+class CommandsMruPage extends StatelessWidget {
+  CommandsMruPage({Key? key}) : super(key: key);
 
   final TextStyle styles = GoogleFonts.lato(
     fontSize: 16,
@@ -74,7 +74,7 @@ class CommandsPage extends StatelessWidget {
                         ),
                         onTap: () {
                           BluetoothHelper helper = BluetoothHelper();
-                          helper.sendCommand('1', connection!);
+                          helper.sendCommand('A', btMac!);
                         },
                       ),
                       InkWell(
@@ -98,7 +98,7 @@ class CommandsPage extends StatelessWidget {
                         ),
                         onTap: () {
                           BluetoothHelper helper = BluetoothHelper();
-                          helper.sendCommand('2', connection!);
+                          helper.sendCommand('B', btMac!);
                         },
                       )
                     ],
@@ -127,7 +127,7 @@ class CommandsPage extends StatelessWidget {
                         ),
                         onTap: () {
                           BluetoothHelper helper = BluetoothHelper();
-                          helper.sendCommand('3', connection!);
+                          helper.sendCommand('C', btMac!);
                         },
                       ),
                       InkWell(
@@ -151,7 +151,7 @@ class CommandsPage extends StatelessWidget {
                         ),
                         onTap: () {
                           BluetoothHelper helper = BluetoothHelper();
-                          helper.sendCommand('4', connection!);
+                          helper.sendCommand('D', btMac!);
                         },
                       )
                     ],
