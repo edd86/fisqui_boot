@@ -11,7 +11,7 @@ class PdfVisor extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black87,
-        title: const Text('Visor de PDF'),
+        title: const Text('Visor PDF'),
       ),
       body: SfPdfViewer.asset(
         pdfURL

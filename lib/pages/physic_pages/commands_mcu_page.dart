@@ -34,18 +34,16 @@ class CommandsMruvPage extends StatelessWidget {
                   Text(
                     'M.R.U',
                     style: GoogleFonts.lato(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white
-                    ),
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
                   Text(
                     'Hora de experimentar...',
                     style: GoogleFonts.lato(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white
-                    ),
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white),
                   ),
                   SizedBox(
                     height: size.height * .02,
@@ -57,40 +55,38 @@ class CommandsMruvPage extends StatelessWidget {
                         child: Card(
                           child: Padding(
                             padding: const EdgeInsets.all(19.9),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Distancia = 0.2 m',
-                                  style: styles,
-                                ),
-                              ],
+                            child: SizedBox(
+                              width: 100,
+                              child: Text(
+                                'A',
+                                textAlign: TextAlign.center,
+                                style: styles,
+                              ),
                             ),
                           ),
                         ),
                         onTap: () {
                           BluetoothHelper helper = BluetoothHelper();
-                          helper.sendCommand('1', btMac!);
+                          helper.sendCommand('A', btMac!);
                         },
                       ),
                       InkWell(
                         child: Card(
                           child: Padding(
                             padding: const EdgeInsets.all(19.9),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Distancia = 0.3 m',
-                                  style: styles,
-                                ),
-                              ],
+                            child: SizedBox(
+                              width: 100,
+                              child: Text(
+                                'B',
+                                textAlign: TextAlign.center,
+                                style: styles,
+                              ),
                             ),
                           ),
                         ),
                         onTap: () {
                           BluetoothHelper helper = BluetoothHelper();
-                          helper.sendCommand('2', btMac!);
+                          helper.sendCommand('B', btMac!);
                         },
                       )
                     ],
@@ -102,40 +98,38 @@ class CommandsMruvPage extends StatelessWidget {
                         child: Card(
                           child: Padding(
                             padding: const EdgeInsets.all(19.9),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Distancia = 0.35 m',
-                                  style: styles,
-                                ),
-                              ],
+                            child: SizedBox(
+                              width: 100,
+                              child: Text(
+                                'C',
+                                textAlign: TextAlign.center,
+                                style: styles,
+                              ),
                             ),
                           ),
                         ),
                         onTap: () {
                           BluetoothHelper helper = BluetoothHelper();
-                          helper.sendCommand('3', btMac!);
+                          helper.sendCommand('C', btMac!);
                         },
                       ),
                       InkWell(
                         child: Card(
                           child: Padding(
                             padding: const EdgeInsets.all(19.9),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Distancia = 0.4 m',
-                                  style: styles,
-                                ),
-                              ],
+                            child: SizedBox(
+                              width: 100,
+                              child: Text(
+                                'D',
+                                textAlign: TextAlign.center,
+                                style: styles,
+                              ),
                             ),
                           ),
                         ),
                         onTap: () {
                           BluetoothHelper helper = BluetoothHelper();
-                          helper.sendCommand('4', btMac!);
+                          helper.sendCommand('D', btMac!);
                         },
                       )
                     ],

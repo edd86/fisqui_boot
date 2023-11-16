@@ -10,11 +10,11 @@ class Collection {
       material: 'assets/docs/materialesmru.pdf'
     ),
     Option(
-      name: 'MRUV',
-      image:  'assets/images/mru.jpg',
+      name: 'MCU',
+      image:  'assets/images/mcu.jpg',
       detalle: 'COCHE CONTROLADO POR BLUETHOOT',
-      codigo: 'assets/docs/codigomruv.pdf',
-      material: 'assets/docs/materialesmruv.pdf'
+      codigo: 'assets/docs/codigomcu.pdf',
+      material: 'assets/docs/materialesmcu.pdf'
     ),
     Option(
       name: 'CAÍDA LIBRE',

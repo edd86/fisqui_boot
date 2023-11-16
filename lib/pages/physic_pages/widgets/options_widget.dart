@@ -1,7 +1,7 @@
 import 'package:fisqui_bot/models/collections.dart';
 import 'package:fisqui_bot/models/option_model.dart';
 import 'package:fisqui_bot/pages/physic_pages/commands_mru_page.dart';
-import 'package:fisqui_bot/pages/physic_pages/commands_mruv_page.dart';
+import 'package:fisqui_bot/pages/physic_pages/commands_mcu_page.dart';
 import 'package:fisqui_bot/pages/physic_pages/widgets/pdf_visor.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -163,7 +163,7 @@ class _OptionsWidgetState extends State<OptionsWidget> {
                             ),
                           );
                           break;
-                        case 'MRUV':
+                        case 'MCU':
                           Navigator.push(
                             context,
                             MaterialPageRoute(
