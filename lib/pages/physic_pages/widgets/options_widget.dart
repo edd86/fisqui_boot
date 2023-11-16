@@ -1,5 +1,6 @@
 import 'package:fisqui_bot/models/collections.dart';
 import 'package:fisqui_bot/models/option_model.dart';
+import 'package:fisqui_bot/pages/physic_pages/commands_cl_page.dart';
 import 'package:fisqui_bot/pages/physic_pages/commands_mru_page.dart';
 import 'package:fisqui_bot/pages/physic_pages/commands_mcu_page.dart';
 import 'package:fisqui_bot/pages/physic_pages/widgets/pdf_visor.dart';
@@ -170,6 +171,12 @@ class _OptionsWidgetState extends State<OptionsWidget> {
                               builder: (context) => CommandsMruvPage(),
                             ),
                           );
+                        case 'CAIDA LIBRE':
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CommandsClPage(),
+                              ));
                         default:
                       }
                     },

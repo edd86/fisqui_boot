@@ -17,11 +17,11 @@ class Collection {
       material: 'assets/docs/materialesmcu.pdf'
     ),
     Option(
-      name: 'CAÍDA LIBRE',
+      name: 'CAIDA LIBRE',
       image: 'assets/images/caida.png',
-      detalle: 'COCHE CONTROLADO POR BLUETHOOT',
-      codigo: '',
-      material: ''
+      detalle: 'COCHE CONTROLADO POR BLUETHOOT', 
+      codigo: 'assets/docs/codigocl.pdf',
+      material: 'assets/docs/materialescl.pdf'
     ),
     Option(
       name: 'MOV. PARABÓLICO',

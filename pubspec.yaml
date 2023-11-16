@@ -31,7 +31,9 @@ flutter:
     - assets/docs/codigomru.pdf
     - assets/docs/codigomruv.pdf
     - assets/docs/codigomcu.pdf
+    - assets/docs/codigocl.pdf
     - assets/docs/materialesmru.pdf
     - assets/docs/materialesmcu.pdf
     - assets/docs/materialesmruv.pdf
+    - assets/docs/materialescl.pdf
     - assets/prueba.pdf

@@ -3,8 +3,8 @@ import 'package:fisqui_bot/variables/global_variables.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CommandsMruPage extends StatelessWidget {
-  CommandsMruPage({Key? key}) : super(key: key);
+class CommandsClPage extends StatelessWidget {
+  CommandsClPage({super.key});
 
   final TextStyle styles = GoogleFonts.lato(
     fontSize: 16,
@@ -32,20 +32,18 @@ class CommandsMruPage extends StatelessWidget {
                     height: size.height * .05,
                   ),
                   Text(
-                    'M.R.U',
+                    'CAIDA LIBRE',
                     style: GoogleFonts.lato(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white
-                    ),
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
                   ),
                   Text(
                     'Hora de experimentar...',
                     style: GoogleFonts.lato(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white
-                    ),
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.white),
                   ),
                   SizedBox(
                     height: size.height * .02,
@@ -57,48 +55,57 @@ class CommandsMruPage extends StatelessWidget {
                         child: Card(
                           child: Padding(
                             padding: const EdgeInsets.all(19.9),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Distancia = 0.2 m',
-                                  style: styles,
-                                ),
-                                Text(
-                                  'Velocidad = 1 m/s',
-                                  style: styles,
-                                ),
-                              ],
+                            child: SizedBox(
+                              width: 120,
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'A',
+                                    textAlign: TextAlign.center,
+                                    style: styles,
+                                  ),
+                                  Text(
+                                    'altura = 25 cm',
+                                    textAlign: TextAlign.center,
+                                    style: styles,
+                                  ),
+
+                                ],
+                              ),
                             ),
                           ),
                         ),
                         onTap: () {
                           BluetoothHelper helper = BluetoothHelper();
-                          helper.sendCommand('1', btMac!);
+                          helper.sendCommand('A', btMac!);
                         },
                       ),
                       InkWell(
                         child: Card(
                           child: Padding(
                             padding: const EdgeInsets.all(19.9),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Distancia = 0.3 m',
-                                  style: styles,
-                                ),
-                                Text(
-                                  'Velocidad = 2 m/s  ',
-                                  style: styles,
-                                ),
-                              ],
+                            child: SizedBox(
+                              width: 120,
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'B',
+                                    textAlign: TextAlign.center,
+                                    style: styles,
+                                  ),
+                                  Text(
+                                    'altura = 55 cm',
+                                    textAlign: TextAlign.center,
+                                    style: styles,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
                         onTap: () {
                           BluetoothHelper helper = BluetoothHelper();
-                          helper.sendCommand('2', btMac!);
+                          helper.sendCommand('B', btMac!);
                         },
                       )
                     ],
@@ -110,50 +117,49 @@ class CommandsMruPage extends StatelessWidget {
                         child: Card(
                           child: Padding(
                             padding: const EdgeInsets.all(19.9),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Distancia = 0.35 m',
-                                  style: styles,
-                                ),
-                                Text(
-                                  'Velocidad = 1 m/s',
-                                  style: styles,
-                                ),
-                              ],
+                            child: SizedBox(
+                              width: 120,
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'C',
+                                    textAlign: TextAlign.center,
+                                    style: styles,
+                                  ),
+                                  Text(
+                                    'altura = 85 cm',
+                                    textAlign: TextAlign.center,
+                                    style: styles,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
                         onTap: () {
                           BluetoothHelper helper = BluetoothHelper();
-                          helper.sendCommand('3', btMac!);
+                          helper.sendCommand('C', btMac!);
                         },
-                      ),
-                      InkWell(
+                      )
+                      /* InkWell(
                         child: Card(
                           child: Padding(
                             padding: const EdgeInsets.all(19.9),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Distancia = 0.4 m',
-                                  style: styles,
-                                ),
-                                Text(
-                                  'Velocidad = 0.8 m/s',
-                                  style: styles,
-                                ),
-                              ],
+                            child: SizedBox(
+                              width: 100,
+                              child: Text(
+                                'D',
+                                textAlign: TextAlign.center,
+                                style: styles,
+                              ),
                             ),
                           ),
                         ),
                         onTap: () {
                           BluetoothHelper helper = BluetoothHelper();
-                          helper.sendCommand('4', btMac!);
+                          helper.sendCommand('D', btMac!);
                         },
-                      )
+                      ) */
                     ],
                   )
                 ],
